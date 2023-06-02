@@ -1,0 +1,72 @@
+[
+  {
+    "Category": "Using",
+    "Scope": "ContractEnum",
+    "Content": "using System.Text.Json.Serialization;",
+    "Position": "",
+    "ArgumentType": ""
+  },
+  {
+    "Category": "Using",
+    "Scope": "DalDataContext",
+    "Content": "using EmployeeManagement.Contracts;",
+    "Position": "",
+    "ArgumentType": ""
+  },
+  {
+    "Category": "Using",
+    "Scope": "DalDataContext",
+    "Content": "using System.Reflection;",
+    "Position": "",
+    "ArgumentType": ""
+  },
+  {
+    "Category": "Using",
+    "Scope": "ServiceImplementation",
+    "Content": "using Microsoft.Extensions.Logging;",
+    "Position": "",
+    "ArgumentType": ""
+  },
+  {
+    "Category": "ClassAttributes",
+    "Scope": "ContractEnum",
+    "Content": "[JsonConverter(typeof(JsonStringEnumConverter))]",
+    "Position": "",
+    "ArgumentType": ""
+  },
+  {
+    "Category": "ConstructorInjection",
+    "Scope": "ServiceImplementation",
+    "Content": "logger",
+    "Position": "",
+    "ArgumentType": "ILogger<{TClass}>"
+  },
+  {
+    "Category": "Code",
+    "Scope": "DalDataContext",
+    "Content": "public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)\r\n        {\r\n            var track = this.ChangeTracker;\r\n\r\n            foreach (var entry in track.Entries())\r\n            {\r\n                if (entry.State == EntityState.Deleted && entry.Entity is SoftDelete)\r\n                {\r\n                    entry.Reload();\r\n\r\n                    var entity = entry.Entity as SoftDelete;\r\n\r\n                    foreach (var p in entry.Properties)\r\n                    {\r\n                        p.IsModified = false;\r\n                    }\r\n\r\n                    entity!.IsDeleted = true;\r\n\r\n                    entry.Property(\"IsDeleted\").IsModified = true;\r\n                }\r\n            }\r\n\r\n            return base.SaveChangesAsync(cancellationToken);\r\n        }",
+    "Position": "EndOfClass",
+    "ArgumentType": ""
+  },
+  {
+    "Category": "Code",
+    "Scope": "DalDataContext",
+    "Content": "static readonly MethodInfo GlobalQueryMethod = typeof(DataContext).GetMethod(nameof(GlobFilter), BindingFlags.Instance | BindingFlags.NonPublic)!;",
+    "Position": "EndOfClass",
+    "ArgumentType": ""
+  },
+  {
+    "Category": "Code",
+    "Scope": "DalDataContext",
+    "Content": "protected void GlobFilter<TEntity>(ModelBuilder modelBuilder)\r\n            where TEntity : SoftDelete\r\n        {\r\n            modelBuilder.Entity<TEntity>().HasQueryFilter(x => !x.IsDeleted);\r\n        }",
+    "Position": "EndOfClass",
+    "ArgumentType": ""
+  },
+  {
+    "Category": "Code",
+    "Scope": "DalDataContext",
+    "Content": "foreach (var entityType in modelBuilder.Model.GetEntityTypes())\r\n            {\r\n                if (entityType.ClrType.BaseType != null && entityType.ClrType.BaseType == typeof(SoftDelete))\r\n                {\r\n                    GlobalQueryMethod\r\n                    .MakeGenericMethod(entityType.ClrType)\r\n                    .Invoke(this, new object[] { modelBuilder });\r\n                }\r\n            }",
+    "Position": "EndOfOnModelCreating",
+    "ArgumentType": ""
+  }
+]
