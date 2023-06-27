@@ -138,13 +138,13 @@
     }
   },
   "DbContextConnection": {
-    "DatabaseType": "Sqlite",
-    "ConnectionName": "data.db",
-    "ConnectionString": "eyJCb2R5IjoiMFZadWpnNS91V2REaUFqYW9ueGxsNWd4YlVDQlFMTndJRlUvOWNBV1x1MDAyQmw0PSIsIkhlYWRlciI6eyJUaW1lc3RhbXAiOjE2ODU0MjMwODEsIlNpZ25hdHVyZSI6IjI0NUM1RDZCNTlERjRBQkQzMEE2RTI0NUMwMjdFRTI4In19"
+    "DatabaseType": "SqlServer",
+    "ConnectionName": "172.25.13.1.EmployeeManage",
+    "ConnectionString": "eyJCb2R5IjoicG1RQ1Y1Z1BQZkUzWWllWVYzSDBmNURVM0lxSVJrQkdtSWQ5TlE3VWR5ZUFwdWNqeXBhUFhBdXlMVTAwNzhHandMY3RvV3J2T2k0RGhLekowbGNuNHY0Szg5cm1jZzJJVGZnMlx1MDAyQm4zTEJxRTB6TS9UZDVkdWtvdG9sSVpPMDZBZGFjWklmZ0gvdnU1QnB4aUVWMzNQS3c9PSIsIkhlYWRlciI6eyJUaW1lc3RhbXAiOjE2ODYyNzQyMDgsIlNpZ25hdHVyZSI6IjZDQjc5NDY1NTY1REQ1MTM3ODhFREE0QTFCOTEwQUUzIn19"
   },
   "IdentityConnection": {
     "DatabaseType": "Sqlite",
     "ConnectionName": "data.db",
-    "ConnectionString": "eyJCb2R5IjoiMFZadWpnNS91V2REaUFqYW9ueGxsNWd4YlVDQlFMTndJRlUvOWNBV1x1MDAyQmw0PSIsIkhlYWRlciI6eyJUaW1lc3RhbXAiOjE2ODU0MjMwODEsIlNpZ25hdHVyZSI6IjI0NUM1RDZCNTlERjRBQkQzMEE2RTI0NUMwMjdFRTI4In19"
+    "ConnectionString": "eyJCb2R5IjoibHk4QUJrcnllM2VzeWZnak80MzlTbnQ3OHlcdTAwMkIxQldTWXkzUElvbmowQUdrPSIsIkhlYWRlciI6eyJUaW1lc3RhbXAiOjE2ODYyNzQyMDgsIlNpZ25hdHVyZSI6Ijg3OTk3NTBBNDE4OEU4RDhGQTg0RjhBQ0I5QjdCMzgwIn19"
   }
 }

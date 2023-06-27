@@ -36,8 +36,6 @@
           "PrincipalKey": "Department.Id"
         }
       ],
-      "DeleteBehavior": "Cascade",
-      "OtherDeleteBehavior": "Cascade",
       "DisplayName": "Company",
       "Description": "",
       "Type": "Entity",
@@ -50,6 +48,7 @@
       "AutoGenerateForeignKeyField": true,
       "ForeignKeyFields": [
         {
+          "IsNullable": true,
           "DataType": "Int32",
           "ForeignKey": "SuperiorDepartmentId",
           "PrincipalKey": "Department.Id"

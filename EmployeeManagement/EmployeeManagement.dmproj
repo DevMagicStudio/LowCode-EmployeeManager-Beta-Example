@@ -4,7 +4,7 @@
     <OutputType>Exe</OutputType>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="DevMagic.LowCode.Design" Version="1.0.0-beta" />
-    <PackageReference Include="DevMagic.LowCode.Design.EFCore" Version="1.0.0-beta" />
+    <PackageReference Include="DevMagic.LowCode.Design" Version="1.0.0-rc" />
+    <PackageReference Include="DevMagic.LowCode.Design.EFCore" Version="1.0.0-rc" />
   </ItemGroup>
 </Project>

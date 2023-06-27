@@ -21,6 +21,7 @@
       "AutoGenerateForeignKeyField": true,
       "ForeignKeyFields": [
         {
+          "IsNullable": true,
           "DataType": "Int32",
           "ForeignKey": "ContactorId",
           "PrincipalKey": "Employee.Id"

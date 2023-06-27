@@ -119,9 +119,10 @@
       "AutoGenerateForeignKeyField": true,
       "ForeignKeyFields": [
         {
+          "IsNullable": true,
           "DataType": "Int32",
           "ForeignKey": "ManagerId",
-          "PrincipalKey": ".Id"
+          "PrincipalKey": "Employee.Id"
         }
       ],
       "DeleteBehavior": "SetNull",
@@ -183,7 +184,7 @@
                     "Items": []
                   },
                   {
-                    "Relation": "AND",
+                    "Relation": "OR",
                     "Type": "Field",
                     "Field": "Employee.LastName",
                     "Operation": "CONTAIN",
